@@ -1,334 +1,246 @@
+<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biodata Rasyid</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            margin: 0;
-            padding: 0;
-        }
+```
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-        .cv-container {
-            max-width: 1000px;
-            background: white;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
-        }
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+        padding: 0;
+    }
 
-        /* JUDUL */
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    /* CONTAINER */
+    .cv-container {
+        max-width: 1000px;
+        background: white;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+        transition: 0.3s;
+    }
 
-        /* ROW ATAS */
+    .cv-container:hover {
+        transform: translateY(-3px);
+    }
+
+    /* NAVBAR */
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: linear-gradient(120deg, #0d6efd, #6610f2, #38bdf8);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, .15);
+    }
+
+    .navbar h3 {
+        margin: 0;
+    }
+
+    .navbar p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    /* BUTTON */
+    .back-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 22px;
+        background: white;
+        color: #0d6efd;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .back-btn:hover {
+        opacity: 0.8;
+    }
+
+    span.icon {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    /* ROW */
+    .row {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        margin-bottom: 30px;
+    }
+
+    .left {
+        flex: 2;
+    }
+
+    .right {
+        flex: 1;
+        text-align: center;
+    }
+
+    /* FOTO */
+    .photo {
+        width: 100%;
+        max-width: 220px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    /* SECTION */
+    h2 {
+        border-left: 5px solid #0d6efd;
+        padding-left: 10px;
+        margin-top: 30px;
+    }
+
+    /* TABLE */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background: #fafafa;
+        border-radius: 8px;
+    }
+
+    td {
+        padding: 8px 5px;
+        vertical-align: top;
+        font-size: 14px;
+    }
+
+    /* LINK */
+    a {
+        color: #0d6efd;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    a:hover {
+        opacity: 0.8;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
         .row {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            margin-bottom: 30px;
-        }
-
-        .left {
-            flex: 2;
+            flex-direction: column;
         }
 
         .right {
-            flex: 1;
-            text-align: center;
+            order: -1;
         }
 
-        /* FOTO */
         .photo {
-            width: 100%;
-            max-width: 220px;
-            aspect-ratio: 4 / 4;
-            /* proporsi foto */
-            object-fit: cover;
-            /* anti gepeng */
-            border-radius: 50%;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
-            /* animation: float 3s ease-in-out infinite; */
-        }
-
-
-
-        /* TABLE */
-        table {
-            width: 100%;
-            border-collapse: collapse;
+            max-width: 160px;
             margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cv-container {
+            padding: 15px;
         }
 
         td {
-            padding: 8px 5px;
-            vertical-align: top;
-            font-size: 14px;
+            display: block;
+            width: 100%;
         }
 
-        a {
-            color: #0d6efd;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* RESPONSIVE MODE */
-        @media (max-width: 768px) {
-            .row {
-                flex-direction: column;
-            }
-
-            .right {
-                order: -1;
-            }
-
-            .photo {
-                max-width: 160px;
-                margin-bottom: 20px;
-            }
-
-            h1 {
-                font-size: 22px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            td {
-                font-size: 13px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .cv-container {
-                padding: 15px;
-            }
-
-            td {
-                display: block;
-                width: 100%;
-            }
-
-            td:first-child {
-                font-weight: bold;
-                margin-top: 10px;
-            }
-        }
-
-        .navbar {
-            position:sticky;
-            bottom: 15px;
-            top: 0;
-            z-index: 1000;
-            background: linear-gradient(120deg, #0d6efd, #6610f2, #38bdf8);
-            padding: 20px;
-            color: white;
-            text-align: center;
-            z-index: 1000;
-        }
-
-        /* tombol */
-        .back-btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 22px;
-            background: white;
-            color: #0d6efd;
-            border-radius: 25px;
-            text-decoration: none;
+        td:first-child {
             font-weight: bold;
-            
+            margin-top: 10px;
         }
-        
-        a:hover {
-            text-decoration: none;
-             opacity: 0.85;
-        }
+    }
+</style>
+```
 
-        /* bayangan saat scroll (polish) */
-        .navbar {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, .15);
-        }
-        span.icon {
-            font-weight: bold;
-            font-size: 20px;
-        }
-        
-    </style>
 </head>
 
 <body>
-    <header class="navbar">
-        <p>Rasyiid Putra Wijaya | IoT & Web Enthusiast</p>
-        <a href="index.html" class="back-btn"> <span class="icon">&#8652;</span> Fortofilio</a>
-         <!-- <a href="/Login/login.html" class="back-btn">Log out</a> -->
-    </header>
 
-    <div class="cv-container">
+```
+<header class="navbar">
+    <h3>Rasyiid Putra Wijaya</h3>
+    <p>IoT Engineer • Web Developer • Tech Enthusiast</p>
+    <a href="index.html" class="back-btn">
+        <span class="icon">&#8652;</span> Portfolio
+    </a>
+</header>
 
+<div class="cv-container">
 
-        <div class="row">
-            <div class="left">
-                <h2>DATA PRIBADI</h2>
-                <table class="data-table">
-                    <tbody>
-                        <tr>
-                            <td>Nama</td>
-                            <td> Rasyiid Putra Wijaya</td>
-                        </tr>
-                        <tr>
-                            <td>NIM</td>
-                            <td>2431417041</td>
-                        </tr>
-                        <tr>
-                            <td>Agama</td>
-                            <td> Islam</td>
-                        </tr>
-                        <tr>
-                            <td>Alamat</td>
-                            <td> Kabupaten Tangerang, Cisoka</td>
-                        </tr>
-                        <tr>
-                            <td>Handphone</td>
-                            <td> 6285692809583</td>
-                        </tr>
-                        <tr>
-                            <td>Status</td>
-                            <td> Belum nikah</td>
-                        </tr>
-                        <tr>
-                            <td>E-Mail</td>
-                            <td>rasyiid@raharja.info</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="right">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8cVsXyP2Wlt4E2izdL2faq9ZO1yEizunNMM1KG9K6Eyqgrz7kCsAonlD9YsoJ0asvcy8gTF0KP88uBDH2q58ohoYp80KcL-pi5WNkmKjCmtfeOdcrmHgNG9MmX8C15Xc7xMPfkzVT2Jorc_pBgRvKIavjwsbvPQs8XI02CTdTgnMVbPY/s1600/result_fotoku.jpg"
-                    alt="Foto Rasyiid" class="photo">
-                <!-- <img src="https://i.ibb.co/F4xdN4F2/MVB09172.jpg" alt="Foto Rasyiid" class="photo"> -->
-            </div>
-
+    <div class="row">
+        <div class="left">
+            <h2>DATA PRIBADI</h2>
+            <table>
+                <tr><td>Nama</td><td>Rasyiid Putra Wijaya</td></tr>
+                <tr><td>NIM</td><td>2431417041</td></tr>
+                <tr><td>Agama</td><td>Islam</td></tr>
+                <tr><td>Alamat</td><td>Kabupaten Tangerang, Cisoka</td></tr>
+                <tr><td>Handphone</td><td>6285692809583</td></tr>
+                <tr><td>Status</td><td>Belum nikah</td></tr>
+                <tr><td>E-Mail</td><td>rasyiid@raharja.info</td></tr>
+            </table>
         </div>
 
-        <h2>DATA PENDIDIKAN</h2>
-        <table>
-            <tbody>
-                <tr>
-                    <td>Sekolah Dasar</td>
-                    <td> SD TUNAS CENDEKIA (2012 - 2018)</td>
-                </tr>
-                <tr>
-                    <td>SMP</td>
-                    <td> SMPN 3 SOLEAR KAB. TANGERANG (2018 - 2021)</td>
-                </tr>
-                <tr>
-                    <td>SMA/SMK</td>
-                    <td> SMKN 9 KAB. TANGERANG (2021–2024)</td>
-                </tr>
-                <tr>
-                    <td>Perguruan Tinggi</td>
-                    <td> RAHARJA (2024 - Sekarang)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>KEMAMPUAN</h2>
-        <table>
-            <tbody>
-                <tr>
-                    <td>Teknologi</td>
-                    <td> Menguasai Office, SQL, Visual Basic dan Mikrocontroller</td>
-                </tr>
-                <tr>
-                    <td>Bahasa</td>
-                    <td> Bahasa Indonesia (Aktif), English (Aktif)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>PENGALAMAN</h2>
-        <table class="data-table">
-            <tbody>
-                <tr>
-                    <td>Membuat heading html </td>
-                    <td> <a href="/FORTOFOLIO/tugasIDU/1.heading.html" target="_blank">Tugas satu</a></td>
-                </tr>
-                <tr>
-                    <td>Membuat preformatted</td>
-                    <td> <a href="/FORTOFOLIO/tugasIDU/2.preformated.html" target="_blank">Tugas dua</a></td>
-                </tr>
-                <tr>
-                    <td> Menyisipkan gambar html</td>
-                    <td> <a href="tugasIDU/3.gambar.html" target="_blank">Tugas tiga</a></td>
-                </tr>
-                <tr>
-                    <td> Membuat tag list html</td>
-                    <td> <a href="tugasIDU/4.tag list.html" target="_blank">Tugas empat</a></td>
-                </tr>
-                <tr>
-                    <td> Membuat format tabel html</td>
-                    <td> <a href="tugasIDU/5.tabel.html" target="_blank">Tugas lima</a></td>
-                </tr>
-                <tr>
-                    <td> Membuat header html</td>
-                    <td> <a href="tugasIDU/6.header.html" target="_blank">Tugas enam</a></td>
-                </tr>
-                <tr>
-                    <td> Membuat iframe html</td>
-                    <td> <a href="tugasIDU/7.iframe.html" target="_blank">Tugas tujuh</a></td>
-                </tr>
-                 <tr>
-                    <td> Menghubungkan ke CSS</td>
-                    <td> <a href="tugasIDU/8.css.html" target="_blank">Tugas delapan</a></td>
-                </tr>
-                 <tr>
-                    <td>Membuat selector class dan ID</td>
-                    <td> <a href="tugasIDU/9.class dan id.html" target="_blank">Tugas sembilan</a></td>
-                </tr>
-                 <tr>
-                    <td>Tampilan HTML dan CSS </td>
-                    <td> <a href="skom.html" target="_blank">Tugas sepuluh</a></td>
-                </tr>
-                 <tr>
-                    <td>Format tabel CSS </td>
-                    <td> <a href="tugasIDU/11. syntak tabel di css.html" target="_blank">Tugas sebelas</a></td>
-                </tr>
-                 <tr>
-                    <td>Link hover</td>
-                    <td> <a href="/FORTOFOLIO/tugasIDU/12. link hover.html" target="_blank">Tugas duabelas</a></td>
-                </tr>
-                  <tr>
-                    <td>Membuat 10 Record di PHP</td>
-                    <td> <a href="http://192.168.0.101/php/mhsSQL/record_10.php" target="_blank">Tugas Tigabelas</a></td>
-                </tr>
-                <tr>
-                    <td>Menguhubungkan SQL</td>
-                    <td> <a href="http://192.168.0.101/php/mhsSQL/index.php" target="_blank">Tugas Empatbelas</a></td>
-                </tr>
-
-            </tbody>
-        </table>
-
-
-
-
+        <div class="right">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8cVsXyP2Wlt4E2izdL2faq9ZO1yEizunNMM1KG9K6Eyqgrz7kCsAonlD9YsoJ0asvcy8gTF0KP88uBDH2q58ohoYp80KcL-pi5WNkmKjCmtfeOdcrmHgNG9MmX8C15Xc7xMPfkzVT2Jorc_pBgRvKIavjwsbvPQs8XI02CTdTgnMVbPY/s1600/result_fotoku.jpg"
+                alt="Foto Rasyiid" class="photo">
+        </div>
     </div>
-</body>
 
+    <h2>DATA PENDIDIKAN</h2>
+    <table>
+        <tr><td>SD</td><td>SD Tunas Cendekia (2012 - 2018)</td></tr>
+        <tr><td>SMP</td><td>SMPN 3 Solear (2018 - 2021)</td></tr>
+        <tr><td>SMK</td><td>SMKN 9 Kab. Tangerang (2021–2024)</td></tr>
+        <tr><td>Kuliah</td><td>Raharja (2024 - Sekarang)</td></tr>
+    </table>
+
+    <h2>KEMAMPUAN</h2>
+    <table>
+        <tr><td>Teknologi</td><td>Office, SQL, Visual Basic, Mikrocontroller</td></tr>
+        <tr><td>Bahasa</td><td>Indonesia (Aktif), English (Aktif)</td></tr>
+    </table>
+
+    <h2>PENGALAMAN</h2>
+    <table>
+        <tr><td>Create Project Smart Home</td><td><a href="https://i.ibb.co.com/bRJdx14N/smarthome.jpg">Lihat</a></td></tr>
+        <tr><td>Create Project Wireless Power Transmission</td><td><a href="https://i.ibb.co.com/ksbcRtfR/wpt.jpg">Lihat</a></td></tr>
+        <tr><td>Create Project Smart NFC: Doorlock via mobile apps </td><td><a href="https://i.ibb.co.com/gZNz0tbf/nfc.jpg">Lihat</a></td></tr>
+        <tr><td>Project Web HTML</td><td></td></tr>
+        <tr><td>Tabel HTML</td><td></td></tr>
+        <tr><td>Iframe</td><td></td></tr>
+        <tr><td>CSS</td><td></td></tr>
+    </table>
+
+</div>
+```
+
+</body>
 </html>
