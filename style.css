@@ -1,0 +1,122 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f9;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: white;
+            width: 350px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .dark h2{
+            color: #f4f6f9;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #4a90e2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        }
+
+        button {
+            width: 20%;
+            padding: 10px;
+            border: none;
+            background: #4a90e2;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            background: #357ab8;
+        }
+
+        .alert {
+            margin-top: 15px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .success {
+            background: #c8f7c5;
+            color: #2d7a2d;
+        }
+
+        .error {
+            background: #f7c5c5;
+            color: #7a2d2d;
+        }
+
+        .dark {
+            background: #1e1e1e;
+            color: #eee;
+        }
+
+        .dark .login-container {
+            background: #2c2c2c;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .dark input {
+            background: #3a3a3a;
+            border: 1px solid #555;
+            color: #fff;
+        }
+
+        .dark button {
+            background: #6ba3ff;
+        }
+
+        .dark button:hover {
+            background: #4e82d8;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 12px;
+            background: #4a90e2;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }

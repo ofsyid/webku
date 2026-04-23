@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoT Portfolio | Syid</title>
+
+  <style>
+    .card {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #eef2f7, #f9fbfd);
+      color: #333;
+      transition: .4s;
+    }
+
+    body.dark {
+      background: linear-gradient(135deg, #020617, #0f172a);
+      color: #e5e7eb;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0d6efd, #6610f2);
+      padding: 18px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    body.dark header {
+      background: linear-gradient(90deg, #020617, #1e293b);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      color: #fff
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .menu-toggle,
+    .toggle-dark {
+      font-size: 22px;
+      cursor: pointer;
+      color: white;
+     
+    }
+    .menu-toggle {
+      display: none;
+    }
+
+    .toggle-dark {
+      margin-right: 15px
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .hero {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 240px;
+      border-radius: 50%;
+      animation: float 3s ease-in-out infinite;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    }
+
+    body.dark .hero img {
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+    }
+
+    .typing {
+      color: #6610f2;
+      font-weight: bold
+    }
+
+    body.dark .typing {
+      color: #38bdf8
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 22px;
+      border-radius: 25px;
+      background: linear-gradient(90deg, #0d6efd, #6610f2);
+      color: white;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px)
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      transition: .3s;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, .1);
+    }
+
+    .card:hover {
+      transform: translateY(-8px)
+    }
+
+    body.dark .card {
+      background: #020617
+    }
+
+    .skill {
+      margin: 15px 0
+    }
+
+    .bar {
+      height: 10px;
+      background: #ddd;
+      border-radius: 10px
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #0d6efd, #6610f2);
+      transition: 1.5s;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #020617;
+      color: white;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-10px)
+      }
+
+      100% {
+        transform: translateY(0)
+      }
+    }
+
+    @media(max-width:768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+   /* DEFAULT DESKTOP */
+nav ul{
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .menu-toggle{
+    display: block;
+  }
+
+  nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  nav ul{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    padding: 20px;
+    border-radius: 0 0 12px 12px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+
+    transform: translateX(110%);
+    opacity: 0;
+    transition: .4s ease;
+  }
+
+  nav ul.active{
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  nav ul a{
+    color: #333f;
+  }
+
+  body.dark nav ul{
+    background: rgba(2,6,23,.85);
+  }
+}
+    }
+
+    #typing {
+      color: #38bdf8;
+      border-right: 2px solid #38bdf8;
+      padding-right: 5px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      50%,
+      100% {
+        border-color: transparent;
+      }
+
+      25%,
+      75% {
+        border-color: #38bdf8;
+      }
+    }
+
+    #menu a {
+      position: relative;
+      text-decoration: none;
+      
+      
+    }
+
+    #menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #0d6efd, #38bdf8);
+      transition: width 0.35s ease;
+      border-radius: 2px;
+     
+    }
+
+    #menu a:hover::after {
+      width: 100%;
+    }
+
+    .nav-left{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+   <nav>
+  <div class="nav-left">
+    <span class="toggle-dark" onclick="toggleDark()">🌙</span>
+    <h1>Fortofolio</h1>
+  </div>
+
+  <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+
+  <ul id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="galeri.html">Galeri</a></li>
+    <li><a href="project-iot.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+  </header>
+
+  <section id="home">
+    <div class="hero">
+      <div>
+        <h2>Halo, saya Rasyid👋</h2>
+        <p>Saya seorang <span class="typing" id="typing"></span></p>
+        <a class="btn" href="cv.html">CV</a>
+      </div>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8cVsXyP2Wlt4E2izdL2faq9ZO1yEizunNMM1KG9K6Eyqgrz7kCsAonlD9YsoJ0asvcy8gTF0KP88uBDH2q58ohoYp80KcL-pi5WNkmKjCmtfeOdcrmHgNG9MmX8C15Xc7xMPfkzVT2Jorc_pBgRvKIavjwsbvPQs8XI02CTdTgnMVbPY/s1600/result_fotoku.jpg">
+    </div>
+  </section>
+
+  <section id="skill">
+    <h2>Keahlian IoT</h2>
+    <div class="skill">Arduino & ESP<div class="bar"><span data-width="95%"></span></div>
+    </div>
+    <div class="skill">IoT Cloud & Firebase<div class="bar"><span data-width="90%"></span></div>
+    </div>
+    <div class="skill">Sensors & Electronic<div class="bar"><span data-width="95%"></span></div>
+    </div>
+  </section>
+<section id="services">
+  <h2>Layanan</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>🔌 IoT Development</h3>
+      <p>Membuat sistem IoT seperti smart home, monitoring sensor, dan automation berbasis ESP & Wemos.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌐 Web Dashboard</h3>
+      <p>Membuat dashboard web untuk monitoring data IoT secara realtime menggunakan Firebase.</p>
+    </div>
+
+    <div class="card">
+      <h3>🤖 Automation System</h3>
+      <p>Mengembangkan sistem otomatis berbasis sensor dan kontrol jarak jauh.</p>
+    </div>
+
+  </div>
+</section>
+  <section id="projects">
+    <h2>Project IoT</h2>
+    <div class="grid">
+
+      <a href="#" class="card">
+        <h3>Smart Home</h3>
+        <p>Control relay + Firebase</p>
+      </a>
+
+      <a href="#" class="card">
+        <h3>Smart NFC Doorlock</h3>
+        <p>Mobile APPs + Firebase</p>
+      </a>
+
+      <a href="#" class="card">
+        <h3>Electronic and Sensors</h3>
+        <p>Inverter and Wireless Power Transmission</p>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <section id="contact">
+    <h2>Kontak</h2>
+    <p><a href="mailto:rasyiid@raharja.infomailto:rasyiid@raharja.info
+?subject=Kerja Sama IoT
+&body=Halo Rasyid,%0ASaya tertarik dengan project IoT kamu."> rasyiid@raharja.info</a></p>
+    <!-- <p>WhatsApp: +6285692809583</p> -->
+  </section>
+
+  <footer>© 2025 Syid – IoT Developer</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  if(localStorage.getItem('theme') === 'dark'){
+    document.body.classList.add('dark');
+  }
+});
+
+function toggleDark(){
+  document.body.classList.toggle('dark');
+
+  localStorage.setItem(
+    'theme',
+    document.body.classList.contains('dark') ? 'dark' : 'light'
+  );
+}
+
+    // typing
+    const text = ['IoT Developer'];
+    let i = 0;
+    let j = 0;
+    const el = document.getElementById('typing');
+
+    function type() {
+      if (j < text[i].length) {
+        el.textContent += text[i][j];
+        j++;
+        setTimeout(type, 80);
+      } else {
+        setTimeout(erase, 1500);
+      }
+    }
+
+    function erase() {
+      if (j > 0) {
+        el.textContent = text[i].substring(0, j - 1);
+        j--;
+        setTimeout(erase, 40);
+      } else {
+        setTimeout(type, 500);
+      }
+    }
+
+    type();
+
+    // skill bar
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.bar span').forEach(b => {
+        if (b.getBoundingClientRect().top < window.innerHeight - 100)
+          b.style.width = b.dataset.width;
+      })
+    });
+  </script>
+
+</body>
+
+
+</html>

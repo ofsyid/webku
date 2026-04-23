@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Syid</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',Arial,sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#eef2f7,#f9fbfd);
+  color:#333;
+}
+
+/* NAVBAR BAWAH */
+.navbar{
+  position:fixed;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 30px);
+  padding:15px;
+  border-radius:25px;
+  background:rgba(15,23,42,.9);
+  backdrop-filter:blur(12px);
+  display:flex;
+  justify-content:space-around;
+  z-index:1000;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:60px 20px 120px;
+}
+
+/* HERO ABOUT */
+.about{
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+
+.about img{
+  width:220px;
+  border-radius:50%;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+  animation:float 3s ease-in-out infinite;
+}
+
+.about-text h1{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.about-text p{
+  line-height:1.6;
+}
+
+/* CARD */
+.card{
+  margin-top:40px;
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+/* LIST */
+.list{
+  margin-top:10px;
+  line-height:1.8;
+}
+
+/* ANIMASI */
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .about{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ABOUT -->
+<div class="container">
+
+  <div class="about">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8cVsXyP2Wlt4E2izdL2faq9ZO1yEizunNMM1KG9K6Eyqgrz7kCsAonlD9YsoJ0asvcy8gTF0KP88uBDH2q58ohoYp80KcL-pi5WNkmKjCmtfeOdcrmHgNG9MmX8C15Xc7xMPfkzVT2Jorc_pBgRvKIavjwsbvPQs8XI02CTdTgnMVbPY/s1600/result_fotoku.jpg">
+    
+    <div class="about-text">
+      <h1>Tentang Saya</h1>
+      <p>
+        Halo! Saya <b>Rasyid</b>, seorang developer yang fokus pada bidang 
+        <b>Internet of Things (IoT)</b> dan sistem embedded. 
+        Saya memiliki minat besar dalam mengembangkan solusi teknologi 
+        yang menghubungkan dunia fisik dengan sistem digital.
+      </p>
+      <P><b>Tujuan saya</b> adalah membantu lebih banyak orang untuk tidak hanya menjadi pengguna teknologi, tetapi juga menjadi pencipta inovasi di era digital.</P>
+    </div>
+  </div>
+
+  <!-- SKILL -->
+  <div class="card">
+    <h2>Keahlian</h2>
+    <div class="list">
+      ⚡ Arduino & ESP32 <br>
+      ☁️ Firebase & IoT Cloud <br>
+      🔧 Sensor & Elektronika <br>
+      💻 Web Development
+    </div>
+  </div>
+
+  <!-- VISI -->
+  <div class="card">
+    <h2>Visi</h2>
+    <p>
+      Menjadi developer IoT yang mampu menciptakan solusi teknologi 
+      yang kreatif, inovatif, efisien, dan bermanfaat bagi masyarakat.
+    </p>
+  </div>
+
+  <!-- MISI -->
+  <div class="card">
+    <h2>Misi</h2>
+    <div class="list">
+      ✔ Mengembangkan project IoT nyata <br>
+      ✔ Terus belajar teknologi baru <br>
+      ✔ Membangun sistem yang efisien dan scalable
+    </div>
+  </div>
+
+</div>
+
+<!-- NAVBAR BAWAH -->
+<header class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="project-iot.html">Project</a>
+  <a href="contact.html">Contact</a>
+</header>
+
+</body>
+</html>
