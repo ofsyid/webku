@@ -12,7 +12,7 @@ function login() {
 
 
         setTimeout(() => {
-            window.location.href = "../index.html";
+            window.location.href = "index.html";
         }, 300);
     } else if (user === "rasyid" && pass === "12") {
         alertBox.style.display = "block";
