@@ -21,7 +21,7 @@ function login() {
 
       
         setTimeout(() => {
-            window.location.href = "../cv.html";
+            window.location.href = "cv.html";
         }, 300);
     }  else if (user === "rasyid" && pass === "123") {
         alertBox.style.display = "block";
@@ -29,7 +29,7 @@ function login() {
         alertBox.textContent = "Login berhasil!"; 
 
            setTimeout(() => {
-            window.location.href = "https://ofsyid.github.io/fortofolio/index.html";
+            window.location.href = "galeri.html";
         }, 300);
     }  else if (user === "rasyid" && pass === "1234") {
         alertBox.style.display = "block";
@@ -38,7 +38,7 @@ function login() {
 
       
         setTimeout(() => {
-            window.location.href = "https://www.blogger.com/profile/14165569268417189496";
+            window.location.href = "about.html";
         }, 300);
     }
     else {
